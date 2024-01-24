@@ -1,0 +1,253 @@
+<section class="mainContainer d-flex justify-content-center" dir="rtl">
+  <mat-card id="maincard">
+    <mat-card-content>
+      <section>
+        <div class="title">
+          {{ "productcreate.maintitle" | translation : language }}
+        </div>
+        <div class="">
+          <form (ngSubmit)="save()" [formGroup]="newCategoryForm">
+            <div class="d-md-flex">
+              <div class="form-group col-12 col-md-6">
+                <label for="name">
+                  <span class="text-danger">*</span>
+
+                  {{ "productedit.name" | translation : language }}
+                </label>
+                <input
+                  id="name"
+                  class="form-control"
+                  type="text"
+                  formControlName="name"
+                  (input)="onInput()"
+                />
+
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    (newCategoryForm.get('name')?.hasError('required') &&
+                      (newCategoryForm.get('name')?.dirty ||
+                        newCategoryForm.get('name')?.touched)) ||
+                    errortrue
+                  "
+                >
+                  {{ "create.required" | translation : language }}
+                </div>
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    newCategoryForm.get('name')?.hasError('minlength') &&
+                    (newCategoryForm.get('name')?.dirty ||
+                      newCategoryForm.get('name')?.touched)
+                  "
+                >
+                  {{ "create.length" | translation : language }}
+                </div>
+              </div>
+
+              <div class="form-group col-12 col-md-6">
+                <label for="arabicName">
+                  <span class="text-danger">*</span>
+
+                  {{ "productedit.arabicname" | translation : language }}
+                </label>
+                <input
+                  (input)="onInput()"
+                  id="arabicName"
+                  class="form-control"
+                  type="text"
+                  formControlName="arabicName"
+                />
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    (newCategoryForm.get('arabicName')?.hasError('required') &&
+                      (newCategoryForm.get('arabicName')?.dirty ||
+                        newCategoryForm.get('arabicName')?.touched)) ||
+                    errortrue
+                  "
+                >
+                  {{ "create.required" | translation : language }}
+                </div>
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    newCategoryForm.get('arabicName')?.hasError('minlength') &&
+                    (newCategoryForm.get('arabicName')?.dirty ||
+                      newCategoryForm.get('arabicName')?.touched)
+                  "
+                >
+                  {{ "create.length" | translation : language }}
+                </div>
+                <!-- <input
+                  (input)="onInput()"
+                id="arabicName"
+                class="form-control"
+                type="text"
+                [(ngModel)]="currentProduct.arabicName"
+              /> -->
+              </div>
+            </div>
+
+            <div class="d-md-flex">
+              <div class="form-group col-12 col-md-6">
+                <label for="description">
+                  <span class="text-danger">*</span>
+
+                  {{ "productedit.desc" | translation : language }}
+                </label>
+                <input
+                  (input)="onInput()"
+                  id="description"
+                  class="form-control"
+                  type="text"
+                  formControlName="describtion"
+                />
+
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    (newCategoryForm.get('describtion')?.hasError('required') &&
+                      (newCategoryForm.get('describtion')?.dirty ||
+                        newCategoryForm.get('describtion')?.touched)) ||
+                    errortrue
+                  "
+                >
+                  {{ "create.required" | translation : language }}
+                </div>
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    newCategoryForm.get('describtion')?.hasError('minlength') &&
+                    (newCategoryForm.get('describtion')?.dirty ||
+                      newCategoryForm.get('describtion')?.touched)
+                  "
+                >
+                  {{ "create.length" | translation : language }}
+                </div>
+              </div>
+
+              <div class="form-group col-12 col-md-6">
+                <label for="arabicDescription">
+                  <span class="text-danger">*</span>
+
+                  {{ "productedit.arabicdesc" | translation : language }}
+                </label>
+                <input
+                  (input)="onInput()"
+                  id="arabicDescription"
+                  class="form-control"
+                  type="text"
+                  required
+                  formControlName="arabicDescribtion"
+                />
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    (newCategoryForm
+                      .get('arabicDescribtion')
+                      ?.hasError('required') &&
+                      (newCategoryForm.get('arabicDescribtion')?.dirty ||
+                        newCategoryForm.get('arabicDescribtion')?.touched)) ||
+                    errortrue
+                  "
+                >
+                  {{ "create.required" | translation : language }}
+                </div>
+                <!-- <input
+                  (input)="onInput()"
+                id="arabicDescription"
+                class="form-control"
+                type="text"
+                [(ngModel)]="currentProduct.arabicDescribtion"
+              /> -->
+              </div>
+            </div>
+
+            <div class="d-md-flex">
+              <div class="form-group col-12 col-md-6">
+                <label for="category">
+                  <span class="text-danger">*</span>
+
+                  {{ "productedit.category" | translation : language }}
+                </label>
+
+                <select
+                  class="custom-select select"
+                  id="category"
+                  formControlName="categoryID"
+                >
+                  <option selected>Choose...</option>
+                  <option
+                    *ngFor="let category of allGategory"
+                    [value]="category.id"
+                  >
+                    {{ category.name }}
+                  </option>
+                </select>
+
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    newCategoryForm.get('categoryID')?.hasError('required') &&
+                    (newCategoryForm.get('categoryID')?.dirty ||
+                      newCategoryForm.get('categoryID')?.touched)
+                  "
+                >
+                  {{ "create.required" | translation : language }}
+                </div>
+              </div>
+
+              <div class="form-group col-12 col-md-6">
+                <label for="video">
+                  <span class="text-danger">*</span>
+
+                  {{ "productedit.video" | translation : language }}
+                </label>
+                <input
+                  (input)="onInput()"
+                  id="video"
+                  class="form-control"
+                  type="text"
+                  formControlName="video"
+                />
+                <!-- <input
+                id="video"
+                class="form-control"
+                type="text"
+                [(ngModel)]="currentProduct.describtion"
+              /> -->
+
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    newCategoryForm.get('video')?.hasError('required') &&
+                    (newCategoryForm.get('video')?.dirty ||
+                      newCategoryForm.get('video')?.touched)
+                  "
+                >
+                  {{ "productedit.desc" | translation : language }}
+                </div>
+              </div>
+            </div>
+            <!-- Display error messages for each input field -->
+            <div
+              *ngIf="errortrue"
+              class="mt-3 text-danger d-flex justify-content-center"
+            >
+              {{ "formValid" | translation : language }}
+            </div>
+            <div class="d-md-flex d-flex justify-content-between">
+              <button class="btn mt-5 createBtn">
+                {{ "product.savebtn" | translation : language }}
+              </button>
+              <button class="btn mt-5 backBtn" (click)="goBack()">
+                {{ "product.backbtn" | translation : language }}
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </mat-card-content>
+  </mat-card>
+</section>

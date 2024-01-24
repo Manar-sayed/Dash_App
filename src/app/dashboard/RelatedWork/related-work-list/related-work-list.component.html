@@ -1,0 +1,81 @@
+<body class="mainContainer" [dir]="textDir">
+  <mat-card id="maincard">
+    <mat-card-content>
+      <section>
+        <div class="d-sm-flex justify-content-between align-items-center m-5">
+          <div>
+            <h1 class="">
+              {{ "productRelated.maintitle" | translation : language }}
+            </h1>
+          </div>
+          <div>
+            <button
+              [routerLink]="['/dash/addrelatedwork/']"
+              type="button"
+              class="createBtn btn"
+            >
+              <h2 class="">
+                {{ "productRelatedcreate.maintitle" | translation : language }}
+              </h2>
+            </button>
+          </div>
+        </div>
+        <div class="d-flex justifiy-center align-items-center">
+          <table class="table table-hover mx-5">
+            <thead>
+              <tr>
+                <th scope="col" class="th1">#</th>
+                <!-- <th scope="col" class="th1">
+                  <h2>{{ "productRelated.id" | translation : language }}</h2>
+                </th> -->
+                <th scope="col" class="th1">
+                  <h2>{{ "productRelated.name" | translation : language }}</h2>
+                </th>
+                <th scope="col" class="th1">
+                  <h2>
+                    {{ "productRelated.actions" | translation : language }}
+                  </h2>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let relatedWork of relaytedWorks; let i = index">
+                <td scope="row">{{ i }}</td>
+                <!-- <td>{{ relatedWork.id }}</td> -->
+                <td>{{ relatedWork.name }}</td>
+                <td>
+                  <div>
+                    <a
+                      (click)="
+                        openUpdateDialog('1500ms', '15ms', relatedWork.id)
+                      "
+                      class="me-3"
+                    >
+                      <i class="fa fa-edit" saria-hidden="true"></i>
+                    </a>
+
+                    <a
+                      (click)="openDialog('1500ms', '15ms', relatedWork.id)"
+                      class="me-3"
+                    >
+                      <i
+                        class="fa fa-trash text-danger"
+                        saria-hidden="true"
+                      ></i>
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="loading-container">
+          <mat-progress-spinner
+            *ngIf="isLoading"
+            mode="indeterminate"
+          ></mat-progress-spinner>
+        </div>
+      </section>
+    </mat-card-content>
+  </mat-card>
+</body>

@@ -1,0 +1,125 @@
+.container-fluid {
+  /* background-color: black; */
+}
+
+.infinity-image-container {
+  background: url("../../../assets/images/login1.png") center no-repeat;
+  background-size: contain;
+  /* opacity: 0.6; */
+  height: 100vh;
+}
+
+.infinity-form-container {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.infinity-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.infinity-form h4 {
+  font-weight: bold;
+  color: var(--main-light-two);
+}
+
+.infinity-form .form-input {
+  position: relative;
+}
+
+.infinity-form .form-input input {
+  width: 100%;
+  margin-bottom: 20px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background: white;
+  padding-left: 45px;
+}
+
+.infinity-form .form-input span {
+  position: absolute;
+  top: 8px;
+  padding-left: 20px;
+  color: #777;
+}
+
+.infinity-form .form-input input:focus,
+.infinity-form .form-input input:valid {
+  border: 2px solid var(--main-light-color);
+}
+
+.infinity-form input[type="checkbox"]:not(:checked) + label:before {
+  background: transparent;
+  border: 2px solid white;
+  width: 15px;
+  height: 15px;
+}
+
+.infinity-form
+  .custom-checkbox
+  .custom-control-input:checked
+  ~ .custom-control-label::before {
+  background-color: #f2c21a !important;
+  border: 0px;
+}
+
+.infinity-form button[type="submit"] {
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  background: linear-gradient(
+    90deg,
+    var(--main-dark-two) 0%,
+    var(--main-two) 20%,
+    var(--main-light-two) 100%
+  );
+  color: #fff;
+  transition: 0.5s;
+
+  line-height: 49px;
+  height: 49px;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: initial;
+  letter-spacing: 0.3px;
+}
+
+.infinity-form button[type="submit"]:hover {
+  background: linear-gradient(
+    45deg,
+    #709de8,
+    #4285f4
+  ); /*Button color when hover*/
+}
+
+.forget-link,
+.login-link,
+.register-link {
+  color: var(--main-light-color);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.forget-link:hover,
+.login-link:hover,
+.register-link:hover {
+  color: var(--main-light-two);
+  text-decoration: none;
+}
+.imagelogo {
+  border-radius: 50%;
+}

@@ -1,0 +1,257 @@
+<!-- category.component.html -->
+<section class="mainContainer d-flex justify-content-center" dir="rtl">
+  <mat-card id="maincard">
+    <mat-card-content>
+      <section>
+        <div class="title">
+          {{ "productRelatedcreate.maintitle" | translation : language }}
+        </div>
+        <div>
+          <form (ngSubmit)="addRelatedWork()" [formGroup]="newRelatedWorkForm">
+            <div class="form-row">
+              <div class="form-group col-6">
+                <label for="name">
+                  <span class='text-danger'>*</span>
+
+                  {{ "productRelatedcreate.name" | translation : language }}
+                </label>
+                <input
+                  (input)="onInput()"
+                  type="text"
+                  id="name"
+                  name="name"
+                  formControlName="name"
+                  required
+                  class="form-control"
+                />
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    (newRelatedWorkForm.get('name')?.hasError('required') &&
+                      (newRelatedWorkForm.get('name')?.dirty ||
+                        newRelatedWorkForm.get('name')?.touched)) ||
+                    errortrue
+                  "
+                >
+                  {{ "create.required" | translation : language }}
+                </div>
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    (newRelatedWorkForm.get('name')?.hasError('minlength') &&
+                      (newRelatedWorkForm.get('name')?.dirty ||
+                        newRelatedWorkForm.get('name')?.touched)) ||
+                    errortrue
+                  "
+                >
+                  {{ "create.length" | translation : language }}
+                </div>
+              </div>
+
+              <div class="form-group col-6">
+                <label for="arabicName">
+                  <span class='text-danger'>*</span>
+
+                  {{
+                    "productRelatedcreate.arabicname" | translation : language
+                  }}
+                </label>
+                <input
+                  (input)="onInput()"
+                  type="text"
+                  id="arabicName"
+                  name="arabicName"
+                  formControlName="arabicName"
+                  required
+                  class="form-control"
+                />
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    (newRelatedWorkForm
+                      .get('arabicName')
+                      ?.hasError('required') &&
+                      (newRelatedWorkForm.get('arabicName')?.dirty ||
+                        newRelatedWorkForm.get('arabicName')?.touched)) ||
+                    errortrue
+                  "
+                >
+                  {{ "create.required" | translation : language }}
+                </div>
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    (newRelatedWorkForm
+                      .get('arabicName')
+                      ?.hasError('minlength') &&
+                      (newRelatedWorkForm.get('arabicName')?.dirty ||
+                        newRelatedWorkForm.get('arabicName')?.touched)) ||
+                    errortrue
+                  "
+                >
+                  {{ "create.length" | translation : language }}
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-6">
+                <label for="describtion">
+                  <span class='text-danger'>*</span>
+
+                  {{ "productRelatedcreate.desc" | translation : language }}
+                </label>
+                <input
+                  (input)="onInput()"
+                  type="text"
+                  id="describtion"
+                  name="describtion"
+                  formControlName="describtion"
+                  required
+                  class="form-control"
+                />
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    (newRelatedWorkForm
+                      .get('describtion')
+                      ?.hasError('required') &&
+                      (newRelatedWorkForm.get('describtion')?.dirty ||
+                        newRelatedWorkForm.get('describtion')?.touched)) ||
+                    errortrue
+                  "
+                >
+                  {{ "create.required" | translation : language }}
+                </div>
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    (newRelatedWorkForm
+                      .get('describtion')
+                      ?.hasError('minlength') &&
+                      (newRelatedWorkForm.get('describtion')?.dirty ||
+                        newRelatedWorkForm.get('describtion')?.touched)) ||
+                    errortrue
+                  "
+                >
+                  {{ "create.length" | translation : language }}
+                </div>
+              </div>
+
+              <div class="form-group col-6">
+                <label for="arabicDescription">
+                  <span class='text-danger'>*</span>
+
+                  {{
+                    "productRelatedcreate.arabicdesc" | translation : language
+                  }}
+                </label>
+                <input
+                  (input)="onInput()"
+                  type="text"
+                  id="arabicDescription"
+                  name="arabicDescription"
+                  formControlName="arabicDescribtion"
+                  required
+                  class="form-control"
+                />
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    (newRelatedWorkForm
+                      .get('arabicDescribtion')
+                      ?.hasError('required') &&
+                      (newRelatedWorkForm.get('arabicDescribtion')?.dirty ||
+                        newRelatedWorkForm.get('arabicDescribtion')
+                          ?.touched)) ||
+                    errortrue
+                  "
+                >
+                  {{ "create.required" | translation : language }}
+                </div>
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    (newRelatedWorkForm
+                      .get('arabicDescribtion')
+                      ?.hasError('minlength') &&
+                      (newRelatedWorkForm.get('arabicDescribtion')?.dirty ||
+                        newRelatedWorkForm.get('arabicDescribtion')
+                          ?.touched)) ||
+                    errortrue
+                  "
+                >
+                  {{ "create.length" | translation : language }}
+                </div>
+                <!-- <input
+                   (input)="onInput()"
+                  type="text"
+                  id="arabicDescription"
+                  name="arabicDescription"
+                  [(ngModel)]="newRelatedWork.arabicDescribtion"
+                  required
+                  class="form-control"
+                /> -->
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-6">
+                <label for="imageOrFile">
+                  {{ "productRelatedcreate.image" | translation : language }}
+                </label>
+                <input
+                  (input)="onInput()"
+                  type="file"
+                  (input)="fileChanged($event)"
+                  id="imageOrFile"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group col-6">
+                <label for="productId" class="pb-2">
+                  <span class='text-danger'>*</span>
+
+                  {{ "productRelatedcreate.category" | translation : language }}
+                </label>
+
+                <select
+                  class="custom-select select"
+                  id="productId"
+                  name="productId"
+                  formControlName="productId"
+                  required
+                >
+                  <option selected>Choose...</option>
+                  <option *ngFor="let r of allProduct" [value]="r.id">
+                    {{ r.name }}
+                  </option>
+                </select>
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    (newRelatedWorkForm
+                      .get('productId')
+                      ?.hasError('required') &&
+                      (newRelatedWorkForm.get('productId')?.dirty ||
+                        newRelatedWorkForm.get('productId')?.touched)) ||
+                    errortrue
+                  "
+                >
+                  {{ "create.required" | translation : language }}
+                </div>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="btn createBtn"
+              [disabled]="!newRelatedWorkForm.valid"
+            >
+              {{ "product.savebtn" | translation : language }}
+            </button>
+          </form>
+        </div>
+      </section>
+    </mat-card-content>
+  </mat-card>
+</section>

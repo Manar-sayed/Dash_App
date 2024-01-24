@@ -1,0 +1,24 @@
+.dialog {
+  padding: 30px;
+  /* border-radius: 150px;
+    background-color: beige; */
+}
+
+.dialog-title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: var(--main-two);
+}
+
+.dialog-content {
+  color: var(--main-color);
+  font-size: 1.5rem;
+}
+.btn {
+  font-size: 1.5rem;
+}
+.dialog-actions {
+  display: flex;
+
+  justify-content: space-between;
+}

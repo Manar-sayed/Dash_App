@@ -1,0 +1,54 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "axe/name-role-value": [
+      "default",
+      {
+        "link-name": "off"
+      }
+    ],
+    "disown-opener": "off",
+    "axe/text-alternatives": [
+      "default",
+      {
+        "image-alt": "off"
+      }
+    ],
+    "axe/parsing": [
+      "default",
+      {
+        "duplicate-id-aria": "off"
+      }
+    ],
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "-ms-grid-column-span"
+        ]
+      }
+    ],
+    "meta-viewport": "off",
+    "axe/forms": [
+      "default",
+      {
+        "label": "off"
+      }
+    ]
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not and_chr <= 114",
+    "not and_ff <= 113",
+    "not chrome <= 114",
+    "not edge <= 114",
+    "not firefox <= 113",
+    "not ios_saf <= 16.5",
+    "not opera <= 99",
+    "not safari <= 16.5",
+    "not samsung <= 21"
+  ]
+}

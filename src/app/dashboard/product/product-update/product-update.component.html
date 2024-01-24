@@ -1,0 +1,174 @@
+<section class="dialog p-4 pt-3 persistent" dir="rtl">
+  <div class="container">
+    <h2 class="title">
+      {{ "productedit.maintitle" | translation : language }}
+    </h2>
+
+    <div *ngIf="currentProduct">
+      <div class="d-sm-flex justify-content-between">
+        <div class="form-group col-12 col-md-6">
+          <label for="name">
+            <span class='text-danger'>*</span>
+
+            {{ "productedit.name" | translation : language }}
+          </label>
+          <input
+            (input)="onInput()"
+            type="text"
+            id="name"
+            [(ngModel)]="currentProduct.name"
+            class="form-control"
+          />
+
+          <!-- <div class="text-danger mt-3" *ngIf="errortrue">
+            {{ "create.required" | translation : language }}
+          </div> -->
+        </div>
+
+        <div class="form-group col-12 col-md-6">
+          <label for="arabicName">
+            <span class='text-danger'>*</span>
+
+            {{ "productedit.arabicname" | translation : language }}
+          </label>
+          <input
+            (input)="onInput()"
+            type="text"
+            id="arabicName"
+            [(ngModel)]="currentProduct.arabicName"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <div class="d-sm-flex justify-content-between">
+        <div class="form-group col-12 col-md-6">
+          <label for="description">
+            <span class='text-danger'>*</span>
+
+            {{ "productedit.desc" | translation : language }}
+          </label>
+          <textarea
+            id="description"
+            [(ngModel)]="currentProduct.describtion"
+            class="form-control"
+          ></textarea>
+        </div>
+        <!-- [(ngModel)]="currentProduct.describtion" -->
+
+        <div class="form-group col-12 col-md-6">
+          <label for="arabicDescription">
+            <span class='text-danger'>*</span>
+
+            {{ "productedit.arabicdesc" | translation : language }}
+          </label>
+          <textarea
+            id="arabicDescription"
+            [(ngModel)]="currentProduct.arabicDescribtion"
+            class="form-control"
+          ></textarea>
+        </div>
+        <!-- [(ngModel)]="currentProduct.arabicDescribtion" -->
+      </div>
+      <div class="d-sm-flex justify-content-between">
+        <div class="form-group col-12 col-md-6">
+          <label for="video">
+            {{ "productedit.video" | translation : language }}
+          </label>
+          <input
+            (input)="onInput()"
+            type="text"
+            id="video"
+            [(ngModel)]="currentProduct.video"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group col-12 col-md-6 col-6">
+          <label for="imageUpload">
+            {{ "productedit.uploadImage" | translation : language }}
+          </label>
+          <input
+            (input)="onInput()"
+            type="file"
+            id="imageUpload"
+            name="imageUpload"
+            class="form-control"
+            (change)="onFileChange($event)"
+            multiple
+          />
+        </div>
+        <!-- 
+        <div class="form-group col-12 col-md-6 col-6">
+          <label for="image">
+            {{ "productedit.image" | translation : language }}
+          </label>
+          <input
+                            (input)="onInput()"
+
+            id="image"
+            class="form-control"
+            type="file"
+            (change)="onFileChange($event)"
+          />
+        </div> -->
+      </div>
+      <div class="form-group col-12 col-md-12 col-12" *ngIf="imagePreview">
+        <label>
+          {{ "productedit.imagePreview" | translation : language }}
+        </label>
+        <div>
+          <img [src]="imagePreview" alt="Image Preview" class="img-preview" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-sm-flex justify-content-between">
+    <!-- <div class="form-group">
+      <button
+        type="button"
+        class="btn btn-danger btn-lg"
+        cdkFocusInitial
+        (click)="uploadTheImage()"
+      >
+        delate
+      </button>
+    </div> -->
+
+    <div class="form-group" *ngIf="imagePreview">
+      <button
+        type="button"
+        class="btn btn-danger btn-lg"
+        cdkFocusInitial
+        (click)="uploadTheImage()"
+      >
+        {{ "productedit.uploadImage" | translation : language }}
+      </button>
+    </div>
+  </div>
+  <div *ngIf="errortrue" class="mt-3 text-danger d-flex justify-content-center">
+    Please Enter Valid data...
+  </div>
+  <div
+    mat-dialog-actions
+    class="dialog-actions d-flex justify-content-between m-3"
+  >
+    <button
+      type="button"
+      class="btn btn-outline-secondary btn-lg"
+      mat-dialog-close
+      cdkFocusInitial
+      (click)="onNoClick()"
+    >
+      {{ "product.backbtn" | translation : language }}
+    </button>
+    <button
+      type="button"
+      class="btn btn-danger btn-lg"
+      cdkFocusInitial
+      mat-dialog-close
+      (click)="updateProduct()"
+    >
+      {{ "product.savebtn" | translation : language }}
+    </button>
+  </div>
+</section>

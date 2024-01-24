@@ -1,0 +1,119 @@
+/* .mainContainer {
+    height: 100%;
+    background-color: var(--main-bg-color);
+    margin-bottom: 0;
+    padding-bottom: 15%;
+  }
+  
+  #maincard {
+    margin: 7%;
+    display: flex;
+    align-content: center;
+    box-shadow: 1px 1px 5px var(--shadow-color);
+    border-radius: 20px;
+  }
+  
+  td {
+    font-size: 1.5em;
+  }
+  
+  .th1 {
+    background-color: var(--main-two);
+    color: white;
+    font-size: 2em;
+    font-weight: 500;
+  }
+  h1 {
+    color: var(--main-font-color);
+  }
+  .fa-edit {
+    color: var(--main-light-two);
+  }
+  i {
+    font-size: 16px;
+  }
+  i:hover {
+    color: var(--main-font-color) !important;
+    cursor: pointer;
+  }
+  .createBtn {
+    background-color: var(--main-two);
+    color: white;
+    font-size: medium;
+  }
+  .createBtn:hover {
+    border: 1px solid var(--main-two);
+    background-color: transparent;
+    color: var(--main-two);
+    font-size: medium;
+  } */
+
+.mainContainer {
+  height: 100%;
+  background-color: var(--main-bg-color);
+  margin-bottom: 0;
+  padding-bottom: 15%;
+}
+/* .ltr {
+    direction: ltr;
+    background-color: aqua;
+  } */
+
+.rtl {
+  direction: ltr;
+}
+#maincard {
+  margin: 7%;
+  display: flex;
+  align-content: center;
+  box-shadow: 1px 1px 5px var(--shadow-color);
+  border-radius: 20px;
+}
+
+td {
+  font-size: 1em;
+}
+
+.th1 {
+  background-color: var(--main-two);
+  color: white;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+h1 {
+  color: var(--main-font-color);
+  text-align: start;
+}
+h2 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.fa-edit {
+  color: var(--main-light-two);
+}
+i {
+  font-size: 14px;
+}
+i:hover {
+  color: var(--main-font-color) !important;
+  cursor: pointer;
+}
+.createBtn {
+  background-color: var(--main-two);
+  color: white;
+}
+.createBtn:hover {
+  border: 1px solid var(--main-two);
+  background-color: transparent;
+  color: var(--main-two) !important;
+}
+
+@media screen and (max-width: 500px) {
+  h2,
+  h1 {
+    font-size: 12px !important;
+  }
+  td {
+    font-size: .8em;
+  }
+}

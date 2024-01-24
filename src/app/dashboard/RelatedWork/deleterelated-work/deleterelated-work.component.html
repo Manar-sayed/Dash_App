@@ -1,0 +1,32 @@
+<section class="dialog" dir="rtl">
+  <h1 mat-dialog-title class="dialog-title">
+    {{ "product.deleteMainTitle" | translation : language }}
+  </h1>
+
+  <div mat-dialog-content class="dialog-content mb-5">
+    <p>
+      {{ "product.deleteDesc" | translation : language }}
+    </p>
+  </div>
+
+  <div mat-dialog-actions class="dialog-actions">
+    <button
+      type="button"
+      class="btn btn-danger btn-lg"
+      cdkFocusInitial
+      mat-dialog-close
+      (click)="deleteRelatedWork()"
+    >
+      {{ "product.deletebtn" | translation : language }}
+    </button>
+    <button
+      type="button"
+      class="btn btn-outline-secondary btn-lg"
+      mat-dialog-close
+      cdkFocusInitial
+      (click)="onNoClick()"
+    >
+      {{ "product.closebtn" | translation : language }}
+    </button>
+  </div>
+</section>

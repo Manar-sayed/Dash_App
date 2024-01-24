@@ -1,0 +1,190 @@
+<section class="dialog p-4 pt-3" dir="rtl">
+  <div class="container">
+    <h2 class="title">
+      {{ "Categoryedit.maintitle" | translation : language }}
+    </h2>
+
+    <form (ngSubmit)="updatecategory()" [formGroup]="newCategoryForm">
+      <!-- <div class="row justify-content-between">
+        <div class="form-group">
+          <label for="ID">ID</label>
+          <input
+            type="text"
+            id="ID"
+            formControlName="id"
+            class="form-control"
+          />
+        </div>
+      </div> -->
+
+      <div class="row justify-content-between">
+        <div class="form-group">
+          <label for="name">
+            <span class="text-danger">*</span>
+
+            {{ "Category.name" | translation : language }}
+          </label>
+          <input
+            type="text"
+            id="name"
+            formControlName="name"
+            class="form-control"
+          />
+          <div
+            class="text-danger mt-3"
+            *ngIf="
+              newCategoryForm.get('name')?.hasError('required') &&
+              (newCategoryForm.get('name')?.dirty ||
+                newCategoryForm.get('name')?.touched)
+            "
+          >
+            {{ "create.required" | translation : language }}
+          </div>
+          <div
+            class="text-danger mt-3"
+            *ngIf="
+              newCategoryForm.get('name')?.hasError('minlength') &&
+              (newCategoryForm.get('name')?.dirty ||
+                newCategoryForm.get('name')?.touched)
+            "
+          >
+            {{ "create.length" | translation : language }}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="arabicName">
+            <span class="text-danger">*</span>
+
+            {{ "Category.arabicname" | translation : language }}
+          </label>
+          <input
+            type="text"
+            id="arabicName"
+            formControlName="arabicName"
+            class="form-control"
+          />
+          <div
+            class="text-danger mt-3"
+            *ngIf="
+              newCategoryForm.get('arabicName')?.hasError('required') &&
+              (newCategoryForm.get('arabicName')?.dirty ||
+                newCategoryForm.get('arabicName')?.touched)
+            "
+          >
+            {{ "create.required" | translation : language }}
+          </div>
+          <div
+            class="text-danger mt-3"
+            *ngIf="
+              newCategoryForm.get('arabicName')?.hasError('minlength') &&
+              (newCategoryForm.get('arabicName')?.dirty ||
+                newCategoryForm.get('arabicName')?.touched)
+            "
+          >
+            {{ "create.length" | translation : language }}
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-between">
+        <div class="form-group">
+          <label for="description">
+            <span class="text-danger">*</span>
+
+            {{ "productedit.desc" | translation : language }}
+          </label>
+          <textarea
+            id="description"
+            formControlName="describtion"
+            class="form-control"
+          ></textarea>
+          <div
+            class="text-danger mt-3"
+            *ngIf="
+              newCategoryForm.get('describtion')?.hasError('required') &&
+              (newCategoryForm.get('describtion')?.dirty ||
+                newCategoryForm.get('describtion')?.touched)
+            "
+          >
+            {{ "create.required" | translation : language }}
+          </div>
+          <div
+            class="text-danger mt-3"
+            *ngIf="
+              newCategoryForm.get('describtion')?.hasError('minlength') &&
+              (newCategoryForm.get('describtion')?.dirty ||
+                newCategoryForm.get('describtion')?.touched)
+            "
+          >
+            {{ "create.length" | translation : language }}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="arabicDescription">
+            <span class="text-danger">*</span>
+
+            {{ "productedit.arabicdesc" | translation : language }}
+          </label>
+          <textarea
+            id="arabicDescribtion"
+            formControlName="arabicDescribtion"
+            class="form-control"
+          ></textarea>
+          <div
+            class="text-danger mt-3"
+            *ngIf="
+              newCategoryForm.get('arabicDescribtion')?.hasError('required') &&
+              (newCategoryForm.get('arabicDescribtion')?.dirty ||
+                newCategoryForm.get('arabicDescribtion')?.touched)
+            "
+          >
+            {{ "create.required" | translation : language }}
+          </div>
+          <div
+            class="text-danger mt-3"
+            *ngIf="
+              newCategoryForm.get('arabicDescribtion')?.hasError('minlength') &&
+              (newCategoryForm.get('arabicDescribtion')?.dirty ||
+                newCategoryForm.get('arabicDescribtion')?.touched)
+            "
+          >
+            {{ "create.length" | translation : language }}
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-6">
+          <label for="imageOrFile">
+            {{ "productedit.image" | translation : language }}
+          </label>
+          <input
+            type="file"
+            (input)="fileChanged($event)"
+            id="imageOrFile"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group col-6"></div>
+      </div>
+
+      <div
+        mat-dialog-actions
+        class="dialog-actions d-flex justify-content-between m-3"
+      >
+        <button
+          type="button"
+          class="btn btn-outline-secondary btn-lg"
+          mat-dialog-close
+          (click)="onNoClick()"
+        >
+          {{ "product.backbtn" | translation : language }}
+        </button>
+        <button type="submit" class="btn btn-danger btn-lg">
+          {{ "product.savebtn" | translation : language }}
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

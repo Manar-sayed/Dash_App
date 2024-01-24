@@ -1,0 +1,82 @@
+<!-- <body class="mainContainer" *ngIf="textDir === 'rtl'"> -->
+<!-- <mat-progress-spinner mode="indeterminate"></mat-progress-spinner> -->
+
+<body class="mainContainer" [dir]="textDir">
+  <mat-card id="maincard">
+    <mat-card-content class="p-0 m-0">
+      <section>
+        <div class="d-sm-flex justify-content-between align-items-center m-5">
+          <div>
+            <h1>{{ "product.maintitle" | translation : language }}</h1>
+          </div>
+          <div>
+            <button
+              [routerLink]="['/dash/addproduct/']"
+              type="button"
+              class="createBtn btn"
+            >
+              <h2 class="">
+                {{ "product.createbtn" | translation : language }}
+              </h2>
+            </button>
+          </div>
+        </div>
+
+        <div class="d-flex justifiy-center align-items-center">
+          <table class="table table-hover mx-5">
+            <thead>
+              <tr>
+                <th scope="col" class="th1">#</th>
+                <th scope="col" class="th1">
+                  <h2>{{ "product.name" | translation : language }}</h2>
+                </th>
+                <th scope="col" class="th1">
+                  <h2>{{ "product.actions" | translation : language }}</h2>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody *ngIf="!isLoading">
+              <tr *ngFor="let product of products; let i = index">
+                <td scope="row">{{ i }}</td>
+                <td>{{ product.name }}</td>
+                <td>
+                  <div>
+                    <!-- <a
+                      [routerLink]="['/dash/updateproduct/', product.id]"
+                      class="text-info me-3"
+                      ><i class="fa fa-edit" saria-hidden="true"></i>
+                    </a> -->
+
+                    <a
+                      (click)="openUpdateDialog('1500ms', '15ms', product.id)"
+                      class="me-3"
+                    >
+                      <i class="fa fa-edit" saria-hidden="true"></i>
+                    </a>
+
+                    <a
+                      (click)="openDialog('1500ms', '15ms', product.id)"
+                      class="me-3"
+                    >
+                      <i
+                        class="fa fa-trash text-danger"
+                        saria-hidden="true"
+                      ></i>
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="loading-container">
+          <mat-progress-spinner
+            *ngIf="isLoading"
+            mode="indeterminate"
+          ></mat-progress-spinner>
+        </div>
+      </section>
+    </mat-card-content>
+  </mat-card>
+</body>

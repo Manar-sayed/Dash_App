@@ -1,0 +1,153 @@
+<section class="mainContainer" [dir]="textDir">
+  <mat-card id="maincard">
+    <mat-card-content>
+      <section>
+        <div class="title">
+          {{
+            currentLanguage === "en"
+              ? "Create contact Message"
+              : "إنشاء محتوى تواصل"
+          }}
+        </div>
+        <div class="">
+          <form (ngSubmit)="save()" [formGroup]="contactusForm">
+            <div class="d-md-flex">
+              <div class="form-group col-12 col-md-6">
+                <label for="name">
+                  <span class='text-danger'>*</span>
+
+                  {{ currentLanguage === "en" ? "Name" : "الإسم" }}
+
+                  :</label
+                >
+                <input
+                  id="name"
+                  class="form-control"
+                  type="text"
+                  formControlName="name"
+                />
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    contactusForm.get('name')?.hasError('required') &&
+                    (contactusForm.get('name')?.dirty ||
+                      contactusForm.get('name')?.touched)
+                  "
+                >
+                  {{ currentLanguage === "en" ? "Required" : "مطلوب" }}
+                </div>
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    contactusForm.get('name')?.hasError('minlength') &&
+                    (contactusForm.get('name')?.dirty ||
+                      contactusForm.get('name')?.touched)
+                  "
+                >
+                  {{
+                    currentLanguage === "en"
+                      ? "Name must ba at least 4 Char(s)"
+                      : " الإسم يجب أن يكون على الأقل 4 أحرف"
+                  }}
+                </div>
+                <!-- <input
+                  id="name"
+                  class="form-control"
+                  type="text"
+                  [(ngModel)]="currentProduct.name"
+                /> -->
+              </div>
+              <div class="form-group col-12 col-md-6">
+                <label for="phone">
+                  <span class='text-danger'>*</span>
+
+                  {{ currentLanguage === "en" ? "Phone Number" : "رقم الهاتف" }}
+                </label>
+                <input
+                  id="phone"
+                  class="form-control"
+                  type="text"
+                  formControlName="phone"
+                />
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    contactusForm.get('phone')?.hasError('required') &&
+                    (contactusForm.get('phone')?.dirty ||
+                      contactusForm.get('phone')?.touched)
+                  "
+                >
+                  {{ currentLanguage === "en" ? "Required" : "مطلوب" }}
+                </div>
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    contactusForm.get('phone')?.hasError('pattern') &&
+                    (contactusForm.get('phone')?.dirty ||
+                      contactusForm.get('phone')?.touched)
+                  "
+                >
+                  {{
+                    currentLanguage === "en"
+                      ? "Phone number must ba 10 digits"
+                      : " رقم الهاتف يجب ان يكون 12 خانة"
+                  }}
+                </div>
+              </div>
+            </div>
+
+            <div class="d-md-flex mx-3">
+              <div class="form-group col-12">
+                <label for="description">
+                  <span class='text-danger'>*</span>
+
+                  {{ currentLanguage === "en" ? "Message" : "الرسالة" }}
+                </label>
+                <textarea
+                  id="description"
+                  class="form-control"
+                  type="text"
+                  formControlName="description"
+                >
+                </textarea>
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    contactusForm.get('description')?.hasError('required') &&
+                    (contactusForm.get('description')?.dirty ||
+                      contactusForm.get('description')?.touched)
+                  "
+                >
+                  {{ currentLanguage === "en" ? "Required" : "مطلوب" }}
+                </div>
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    contactusForm.get('description')?.hasError('minlength') &&
+                    (contactusForm.get('description')?.dirty ||
+                      contactusForm.get('description')?.touched)
+                  "
+                >
+                  {{
+                    currentLanguage === "en"
+                      ? "Name must ba at least 4 Char(s)"
+                      : " الرسالة يجب أن تكون على الأقل 4 أحرف"
+                  }}
+                </div>
+              </div>
+            </div>
+
+            <div class="d-sm-flex justify-content-between">
+              <button class="btn mt-5 createBtn">
+                {{ currentLanguage === "en" ? "Save" : "حفظ" }}
+              </button>
+              <button class="btn mt-5 backBtn" (click)="goBack()">
+                {{ currentLanguage === "en" ? "Go Back" : "رجوع" }}
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </mat-card-content>
+  </mat-card>
+</section>

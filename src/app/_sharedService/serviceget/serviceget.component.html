@@ -1,0 +1,83 @@
+<body class="mainContainer" [dir]="textDir">
+  <mat-card id="maincard">
+    <mat-card-content>
+      <section>
+        <div class="d-sm-flex justify-content-between align-items-center m-5">
+          <div>
+            <h1 class="">
+              {{ currentLanguage === "en" ? "All Data" : "كل البيانات" }}
+            </h1>
+          </div>
+          <div></div>
+        </div>
+        <div class="d-flex justifiy-center align-items-center">
+          <table class="table table-hover mx-5">
+            <thead>
+              <tr>
+                <!-- <th class="th1">#</th> -->
+                <th class="th1">
+                  <h2>
+                    {{
+                      currentLanguage === "en" ? "Email" : "البريد الإلكترونى"
+                    }}
+                  </h2>
+                </th>
+                <th class="th1 d-none d-md-table-cell">
+                  <h2>
+                    {{ currentLanguage === "en" ? "Phone" : "رقم الهاتف" }}
+                  </h2>
+                </th>
+                <th class="th1 d-none d-md-table-cell">
+                  <h2>
+                    {{ currentLanguage === "en" ? "Location" : "الموقع" }}
+                  </h2>
+                </th>
+                <th class="th1">
+                  <h2>
+                    {{ currentLanguage === "en" ? "Actions" : "العمليات" }}
+                  </h2>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="">
+                <!-- <td>{{ settingGet.id }}</td> -->
+                <td>{{ settingGet.email }}</td>
+                <td class="d-none d-md-table-cell">
+                  <p>
+                    {{ settingGet.firstPhoneNumber }}
+                  </p>
+                  <p>
+                    {{ settingGet.secondPhoneNumber }}
+                  </p>
+                  <p>
+                    {{ settingGet.thirdPhoneNumber }}
+                  </p>
+                </td>
+
+                <td class="d-none d-md-table-cell">
+                  {{ settingGet.location }}
+                </td>
+
+                <td>
+                  <a
+                    (click)="openUpdateDialog('1500ms', '15ms', settingGet.id)"
+                    class="me-3"
+                  >
+                    <i class="fa fa-edit" saria-hidden="true"></i>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="loading-container">
+          <mat-progress-spinner
+            *ngIf="isLoading"
+            mode="indeterminate"
+          ></mat-progress-spinner>
+        </div>
+      </section>
+    </mat-card-content>
+  </mat-card>
+</body>

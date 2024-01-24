@@ -1,0 +1,48 @@
+{
+  "dir": "ltr",
+  "weput": "We Put",
+  "Dreams": "Dreams",
+  "Dreams1": "Into",
+  "Reality": "Reality",
+  "swipperbtn": "Get A Quote",
+  "swipperslide1": "Vivamus ac ultrices diam, vitae accumsan tellus.Integer sollicitudin vulputate lacus, conguevulputate nisl eleifend in.",
+  "welcome_section_main_title": "Welcome To Our Agency",
+  "welcome_section_sub_title": "Making the World",
+  "welcome_section_date_title": "Since 1980",
+  "welcome_section_desc1": " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumconsectetur sit ullam perspiciatis, deserunt.Morbi vitae bibendum mi. Phasellus commodo est ut magna tristique, ut mattis felis eleifend. Nulla viverra quam eget risus rutrum, non bibendum turpis sagittis.",
+  "welcome_section_desc2": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin cursus sem at rhoncus convallis.",
+  "welcome_section_AboutUs": "About Us",
+  "welcome_section_Projects": "Projects",
+
+  "services_moreBtn": "View More",
+  "services_mainTitle": "Services Area We Focus On",
+  "services_mainDesc": "Vivamus ac ultrices diam, vitae accumsan tellus. Integer sollicitudin vulputate lacus, congue vulputate nisl eleifend in.",
+  "services_serv1_title": "Construction Services",
+  "services_serv1_desc": "Vivamus ac ultrices diam, vitae accumsan tellus. Integer sollicitudin vulputate lacus, congue vulputate nisl eleifend in.",
+  "services_serv2_title": "Architecture",
+  "services_serv2_desc": "Vivamus ac ultrices diam, vitae accumsan tellus. Integer sollicitudin vulputate lacus, congue vulputate nisl eleifend in.",
+  "services_serv3_title": "House Renovation",
+  "services_serv3_desc": "Vivamus ac ultrices diam, vitae accumsan tellus. Integer sollicitudin vulputate lacus, congue vulputate nisl eleifend in.",
+
+  "about_us_mainTitle": "How We Work",
+  "about_us_mainDesc": "Vivamus ac ultrices diam, vitae accumsan tellus. Integer sollicitudin vulputate lacus, congue vulputate nisl eleifend in.",
+  "about_us_card1_title": "Innovative Approach",
+  "about_us_card1_desc": "Vivamus ac ultrices diam, vitae accumsan tellus. Integer sollicitudin vulputate lacus, congue vulputate nisl eleifend in.",
+  "about_us_card2_title": "Perfectly Structured",
+  "about_us_card2_desc": "Vivamus ac ultrices diam, vitae accumsan tellus. Integer sollicitudin vulputate lacus, congue vulputate nisl eleifend in.",
+  "about_us_card3_title": "Affordable Team",
+  "about_us_card3_desc": "Vivamus ac ultrices diam, vitae accumsan tellus. Integer sollicitudin vulputate lacus, congue vulputate nisl eleifend in.",
+  "about_us_card4_title": "Delivered On Time",
+  "about_us_card4_desc": "Vivamus ac ultrices diam, vitae accumsan tellus. Integer sollicitudin vulputate lacus, congue vulputate nisl eleifend in.",
+
+  "portfolio_mainTitle": "Our Latest Works",
+  "portfolio_mainDesc": "Vivamus ac ultrices diam, vitae accumsan tellus. Integer sollicitudin vulputate lacus, congue vulputate nisl eleifend in.",
+  "portfolio_All_btn": "ALL",
+  "portfolio_Residential_btn": "Residential",
+  "portfolio_Interiors_btn": "Interiors",
+  "portfolio_Architecture_btn": "Architecture",
+  "portfolio_Commerical_btn": "Commerical",
+
+  "formValid": " Please Enter Valid data..."
+
+}

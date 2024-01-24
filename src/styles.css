@@ -1,0 +1,65 @@
+@import "~../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "~../node_modules/font-awesome/css/font-awesome.css";
+
+:root {
+  --main-color: #495867;
+  --main-font-color: #164871;
+  --main-two: #c08c09;
+  --main-dark-two: #b78406;
+  --main-light-two: #ebc971;
+  --main-dark-color: #324050;
+  --main-light-color: #7f8c97;
+  --main-bg-color: #f5f7fa;
+  --shadow-color: #eaeaea;
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-light: #d1d7d7;
+  --bs-gray-dark: #343a40;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70px;
+}
+.mat-mdc-progress-spinner {
+  --mdc-circular-progress-active-indicator-color: var(--main-two);
+}
+html,
+body {
+  height: 100%;
+}
+
+

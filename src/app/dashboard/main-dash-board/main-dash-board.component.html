@@ -1,0 +1,241 @@
+<!-- <div class="mainDiv">
+  <div
+    class="d-flex justify-content-between"
+    [class.rtl]="textDir === 'rtl'"
+    [class.ltr]="textDir === 'ltr'"
+  >
+    <div class="col-md-2">
+      <p class="menu-icon d-md-none" (click)="toggleSidebar()">☰</p>
+      <div *ngIf="isOpen" class="sidebar d-md-inline" id="sidebar">
+        <div class="main_title py-3 mb-3 d-flex justify-content-betwean">
+          <span class="logo">&#9775;</span>
+          <div>Constructions App</div>
+        </div>
+        <hr />
+        <div
+          class="d-flex justify-content-start"
+          [class.rtl]="textDir === 'rtl'"
+          [class.ltr]="textDir === 'ltr'"
+        >
+          <ul class="list-unstyled w-100 p-0 m-0">
+            <li>
+              <a routerLink="maincontent"
+                ><i class="bi bi-speedometer2"></i>
+                {{ "dashboard.title" | translation : selectedLanguage }}
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="listproduct"
+                ><i class="bi bi-tag"></i>
+                {{ "dashboard.product" | translation : selectedLanguage }}
+                <i class="bi bi-arrow-right icon"></i
+              ></a>
+            </li>
+
+            <li>
+              <a routerLink="listcategory"
+                ><i class="bi bi-tag"></i>
+                {{ "dashboard.category" | translation : selectedLanguage }}
+
+                <i class="bi bi-arrow-right icon"></i
+              ></a>
+            </li>
+
+            <li>
+              <a routerLink="listrelatedwork"
+                ><i class="bi bi-bag"></i>
+                {{ "dashboard.relatedWork" | translation : selectedLanguage }}
+
+                <i class="bi bi-arrow-right icon"></i
+              ></a>
+            </li>
+            <li>
+              <a routerLink="listMessage"
+                ><i class="bi bi-bag"></i>
+                {{
+                  "dashboard.contactMessage" | translation : selectedLanguage
+                }}
+                <i class="bi bi-arrow-right icon"></i
+              ></a>
+            </li>
+
+            <li>
+              <a routerLink="listsetting"
+                ><i class="bi bi-tag"></i>
+                {{ "dashboard.setting" | translation : selectedLanguage }}
+
+                <i class="bi bi-arrow-right icon"></i
+              ></a>
+            </li>
+
+            <li>
+              <a href=" "
+                ><i class="fa-solid fa-arrow-right-from-bracket"></i>
+                {{ "dashboard.logout" | translation : selectedLanguage }}
+              </a>
+            </li>
+            <li>
+              <a>
+                <span *ngIf="selectedLanguage === 'ar'">
+                  <button
+                    type="button"
+                    (click)="switchLanguage('en')"
+                    class="langbtn"
+                  >
+                    English
+                  </button>
+                </span>
+                <span *ngIf="selectedLanguage === 'en'">
+                  <button
+                    type="button"
+                    (click)="switchLanguage('ar')"
+                    class="langbtn"
+                  >
+                    العربية
+                  </button>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-10 p-0 m-0">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div> -->
+
+<!-- app.component.html -->
+<!-- app.component.html -->
+<div class="mainDiv" [dir]="textDir">
+  <div class="d-flex justify-content-between">
+    <div class="" [ngClass]="{ 'col-4 col-md-3 col-xl-2 ': isOpen }">
+      <p class="menu-icon d-md-none" (click)="toggleSidebar()">☰</p>
+
+      <div
+        *ngIf="isOpen"
+        [ngClass]="{ 'd-none': !isOpen, 'col-2 ': isOpen }"
+        class="sidebar d-md-inline"
+      >
+        <div class="main_title py-3 mb-3 d-flex justify-content-betwean">
+          <span class="logo">&#9775;</span>
+          <div>Constructions App</div>
+        </div>
+        <hr />
+        <div
+          class="d-flex justify-content-start"
+          [class.rtl]="textDir === 'rtl'"
+          [class.ltr]="textDir === 'ltr'"
+        >
+          <ul class="list-unstyled w-100 p-0 m-0">
+            <li>
+              <a routerLink="maincontent"
+                ><i class="bi bi-speedometer2"></i>
+                {{ "dashboard.title" | translation : selectedLanguage }}
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="listproduct"
+                ><i class="bi bi-tag"></i>
+                {{ "dashboard.product" | translation : selectedLanguage }}
+                <i class="bi bi-arrow-right icon"></i
+              ></a>
+            </li>
+
+            <li>
+              <a routerLink="listcategory"
+                ><i class="bi bi-tag"></i>
+                {{ "dashboard.category" | translation : selectedLanguage }}
+
+                <i class="bi bi-arrow-right icon"></i
+              ></a>
+            </li>
+
+            <li>
+              <a routerLink="listrelatedwork"
+                ><i class="bi bi-bag"></i>
+                {{ "dashboard.relatedWork" | translation : selectedLanguage }}
+
+                <i class="bi bi-arrow-right icon"></i
+              ></a>
+            </li>
+            <li>
+              <a routerLink="listMessage"
+                ><i class="bi bi-bag"></i>
+                {{
+                  "dashboard.contactMessage" | translation : selectedLanguage
+                }}
+                <i class="bi bi-arrow-right icon"></i
+              ></a>
+            </li>
+
+            <li>
+              <a routerLink="listsetting"
+                ><i class="bi bi-tag"></i>
+                {{ "dashboard.setting" | translation : selectedLanguage }}
+                <i class="bi bi-arrow-right icon"></i
+              ></a>
+            </li>
+
+            <!-- <li>
+              <button (click)="logout()">
+                <a href="" 
+                ><i class="fa-solid fa-arrow-right-from-bracket"></i>
+                {{ "dashboard.logout" | translation : selectedLanguage }}
+              </a>
+              </button>
+            </li> -->
+            <li>
+              <a (click)="logout()"
+                ><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a
+              >
+            </li>
+
+            <!-- <li>
+              <a>
+                <span>
+                  <button type="button" class="langbtn" (click)="logout()">
+                    Logout
+                  </button>
+                </span>
+              </a>
+            </li> -->
+
+            <li>
+              <a>
+                <span *ngIf="selectedLanguage === 'ar'">
+                  <button
+                    type="button"
+                    (click)="switchLanguage('en')"
+                    class="langbtn"
+                  >
+                    English
+                  </button>
+                </span>
+                <span *ngIf="selectedLanguage === 'en'">
+                  <button
+                    type="button"
+                    (click)="switchLanguage('ar')"
+                    class="langbtn"
+                  >
+                    العربية
+                  </button>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="p-0 m-0 maincontainer"
+      [ngClass]="{ 'col-12': !isOpen, ' col-8 col-md-9 col-xl-10': isOpen }"
+    >
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

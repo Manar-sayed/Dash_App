@@ -1,0 +1,77 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- IMAGE CONTAINER BEGIN -->
+    <div
+      class="col-lg-6 col-md-6 d-none d-md-block infinity-image-container"
+    ></div>
+    <!-- IMAGE CONTAINER END -->
+
+    <!-- FORM CONTAINER BEGIN -->
+    <div class="col-lg-6 col-md-6 infinity-form-container">
+      <div class="col-lg-9 col-md-12 col-sm-9 col-xs-12 infinity-form">
+        <!-- Company Logo -->
+        <div class="text-center mb-3 mt-5">
+          <img
+            src="../../../assets/images/logo.jpg"
+            width="150px"
+            class="imagelogo"
+          />
+        </div>
+        <div class="text-center mb-4">
+          <h4>Login into your account</h4>
+        </div>
+        <!-- Form -->
+        <div class="px-3">
+          <!-- Input Box -->
+          <div class="form-input">
+            <span><i class="fa fa-envelope-o"></i></span>
+            <input
+              type="text"
+              name=""
+              placeholder="Email Address"
+              tabindex="10"
+              required
+              [(ngModel)]="credentials.email"
+            />
+          </div>
+          <div class="form-input">
+            <span><i class="fa fa-lock"></i></span>
+            <input
+              type="password"
+              name=""
+              placeholder="Password"
+              required
+              [(ngModel)]="credentials.password"
+            />
+          </div>
+          <div class="row mb-3">
+            <!-- Remember Checkbox -->
+            <div class="col-auto d-flex align-items-center">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="cb1" />
+                <label
+                  class="custom-control-label text-secondary ml-3"
+                  for="cb1"
+                  >Remember me</label
+                >
+              </div>
+            </div>
+          </div>
+          <div *ngIf="errorLogin" class="error-message text-danger text-center">
+            Invalid user. Please check your email and password.
+          </div>
+          <!-- Login Button -->
+          <div class="mb-3">
+            <button type="submit" (click)="login()" class="btn btn-block">
+              Login
+            </button>
+          </div>
+          <div class="text-right">
+            <a href="reset.html" class="forget-link">Forgot password?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FORM CONTAINER END -->
+  </div>
+</div>

@@ -1,0 +1,206 @@
+<section class="mainContainer d-flex justify-content-center " dir="rtl">
+  <mat-card id="maincard">
+    <mat-card-content>
+      <section>
+        <div class="title">
+          {{ "Categorycreate.maintitle" | translation : language }}
+        </div>
+        <div class="">
+          <form (ngSubmit)="addCategory()" [formGroup]="newCategoryForm">
+            <div class="form-row">
+              <div class="form-group col-6">
+                <label for="name">
+                  <span class="text-danger">*</span>
+
+                  {{ "Category.name" | translation : language }}
+                </label>
+                <input
+                  (input)="onInput()"
+                  type="text"
+                  id="name"
+                  name="name"
+                  formControlName="name"
+                  required
+                  class="form-control"
+                />
+
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    (newCategoryForm.get('name')?.hasError('required') &&
+                      (newCategoryForm.get('name')?.dirty ||
+                        newCategoryForm.get('name')?.touched)) ||
+                    errortrue
+                  "
+                >
+                  {{ "create.required" | translation : language }}
+                </div>
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    (newCategoryForm.get('name')?.hasError('minlength') &&
+                      (newCategoryForm.get('name')?.dirty ||
+                        newCategoryForm.get('name')?.touched)) ||
+                    errortrue
+                  "
+                >
+                  {{ "create.length" | translation : language }}
+                </div>
+              </div>
+              <div class="form-group col-6">
+                <label for="arabicName">
+                  <span class="text-danger">*</span>
+
+                  {{ "Category.arabicname" | translation : language }}
+                </label>
+                <input
+                  (input)="onInput()"
+                  type="text"
+                  id="arabicName"
+                  name="arabicName"
+                  formControlName="arabicName"
+                  required
+                  class="form-control"
+                />
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    (newCategoryForm.get('arabicName')?.hasError('required') &&
+                      (newCategoryForm.get('arabicName')?.dirty ||
+                        newCategoryForm.get('arabicName')?.touched)) ||
+                    errortrue
+                  "
+                >
+                  {{ "create.required" | translation : language }}
+                </div>
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    (newCategoryForm.get('arabicName')?.hasError('minlength') &&
+                      (newCategoryForm.get('arabicName')?.dirty ||
+                        newCategoryForm.get('arabicName')?.touched)) ||
+                    errortrue
+                  "
+                >
+                  {{ "create.length" | translation : language }}
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-6">
+                <label for="describtion">
+                  <span class="text-danger">*</span>
+
+                  {{ "productedit.desc" | translation : language }}
+                </label>
+                <input
+                  (input)="onInput()"
+                  type="text"
+                  id="describtion"
+                  name="describtion"
+                  formControlName="describtion"
+                  required
+                  class="form-control"
+                />
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    (newCategoryForm.get('describtion')?.hasError('required') &&
+                      (newCategoryForm.get('describtion')?.dirty ||
+                        newCategoryForm.get('describtion')?.touched)) ||
+                    errortrue
+                  "
+                >
+                  {{ "create.required" | translation : language }}
+                </div>
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    (newCategoryForm
+                      .get('describtion')
+                      ?.hasError('minlength') &&
+                      (newCategoryForm.get('describtion')?.dirty ||
+                        newCategoryForm.get('describtion')?.touched)) ||
+                    errortrue
+                  "
+                >
+                  {{ "create.length" | translation : language }}
+                </div>
+              </div>
+              <div class="form-group col-6">
+                <label for="arabicDescribtion">
+                  <span class="text-danger">*</span>
+
+                  {{ "productedit.arabicdesc" | translation : language }}
+                </label>
+                <input
+                  (input)="onInput()"
+                  type="text"
+                  id="arabicDescribtion"
+                  name="arabicDescribtion"
+                  formControlName="arabicDescribtion"
+                  required
+                  class="form-control"
+                />
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    (newCategoryForm
+                      .get('arabicDescribtion')
+                      ?.hasError('required') &&
+                      (newCategoryForm.get('arabicDescribtion')?.dirty ||
+                        newCategoryForm.get('arabicDescribtion')?.touched)) ||
+                    errortrue
+                  "
+                >
+                  {{ "create.required" | translation : language }}
+                </div>
+                <div
+                  class="text-danger mt-3"
+                  *ngIf="
+                    (newCategoryForm
+                      .get('arabicDescribtion')
+                      ?.hasError('minlength') &&
+                      (newCategoryForm.get('arabicDescribtion')?.dirty ||
+                        newCategoryForm.get('arabicDescribtion')?.touched)) ||
+                    errortrue
+                  "
+                >
+                  {{ "create.length" | translation : language }}
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-6">
+                <label for="imageOrFile">
+                  {{ "productedit.image" | translation : language }}
+                </label>
+                <input
+                  (input)="onInput()"
+                  type="file"
+                  (input)="fileChanged($event)"
+                  id="imageOrFile"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group col-6"></div>
+            </div>
+            <div class="form-row d-flex justify-content-between">
+              <button
+                class="btn mt-5 createBtn"
+                type="submit"
+                [disabled]="!newCategoryForm.valid"
+              >
+                {{ "product.savebtn" | translation : language }}
+              </button>
+              <button class="btn mt-5 backBtn" type="button" (click)="goBack()">
+                {{ "product.backbtn" | translation : language }}
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </mat-card-content>
+  </mat-card>
+</section>
