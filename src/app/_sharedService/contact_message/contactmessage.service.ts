@@ -11,7 +11,8 @@ export class ContactmessageService {
   mainApi = environment.apiUrl;
   private apiUrl = `${this.mainApi}/ECommerce/Messages`;
 
-  token = environment.token;
+  // token = environment.token;
+  token = localStorage.getItem('authToken');
 
   constructor(public http: HttpClient) {}
   private getHeaders(): HttpHeaders {

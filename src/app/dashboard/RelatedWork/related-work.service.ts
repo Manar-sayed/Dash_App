@@ -12,7 +12,8 @@ export class RelatedWorkService {
   mainApi = environment.apiUrl;
   private apiUrl = `${this.mainApi}/AdminECommerce/RelatedWork`;
 
-  token = environment.token;
+  // token = environment.token;
+  token = localStorage.getItem('authToken');
 
   private getHeaders(): HttpHeaders {
     return new HttpHeaders({
@@ -32,12 +33,13 @@ export class RelatedWorkService {
   }
 
   getById(id: any) {
-    return this.http.get<RelatedWork>(`${this.apiUrl}/get/${id}`);
+    return this.http.get<RelatedWork>(`${this.apiUrl}/get/${id}`, {
+      headers: this.getHeaders(),
+    });
   }
 
   deleteById(id: Number) {
     const url = `${this.apiUrl}/delete/${id}`;
-
     return this.http.delete(url, {
       headers: this.getHeaders(),
     });

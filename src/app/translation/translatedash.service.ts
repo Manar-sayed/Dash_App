@@ -16,7 +16,7 @@ export class TranslatedashService {
       'dashboard.addrelatedWork': 'Add Related Work',
       'dashboard.contactMessage': 'Contact Message',
       'dashboard.setting': 'Setting',
-      'dashboard.logout': 'LogOut',
+      'dashboard.logout': 'Logout',
       // product list page
       'product.maintitle': 'All Products',
       'product.createbtn': 'Create New Product',

@@ -133,14 +133,14 @@
             <li>
               <a routerLink="maincontent"
                 ><i class="bi bi-speedometer2"></i>
-                {{ "dashboard.title" | translation : selectedLanguage }}
+                {{ 'dashboard.title' | translation : selectedLanguage }}
               </a>
             </li>
 
             <li>
               <a routerLink="listproduct"
                 ><i class="bi bi-tag"></i>
-                {{ "dashboard.product" | translation : selectedLanguage }}
+                {{ 'dashboard.product' | translation : selectedLanguage }}
                 <i class="bi bi-arrow-right icon"></i
               ></a>
             </li>
@@ -148,7 +148,7 @@
             <li>
               <a routerLink="listcategory"
                 ><i class="bi bi-tag"></i>
-                {{ "dashboard.category" | translation : selectedLanguage }}
+                {{ 'dashboard.category' | translation : selectedLanguage }}
 
                 <i class="bi bi-arrow-right icon"></i
               ></a>
@@ -157,7 +157,7 @@
             <li>
               <a routerLink="listrelatedwork"
                 ><i class="bi bi-bag"></i>
-                {{ "dashboard.relatedWork" | translation : selectedLanguage }}
+                {{ 'dashboard.relatedWork' | translation : selectedLanguage }}
 
                 <i class="bi bi-arrow-right icon"></i
               ></a>
@@ -166,7 +166,7 @@
               <a routerLink="listMessage"
                 ><i class="bi bi-bag"></i>
                 {{
-                  "dashboard.contactMessage" | translation : selectedLanguage
+                  'dashboard.contactMessage' | translation : selectedLanguage
                 }}
                 <i class="bi bi-arrow-right icon"></i
               ></a>
@@ -175,7 +175,7 @@
             <li>
               <a routerLink="listsetting"
                 ><i class="bi bi-tag"></i>
-                {{ "dashboard.setting" | translation : selectedLanguage }}
+                {{ 'dashboard.setting' | translation : selectedLanguage }}
                 <i class="bi bi-arrow-right icon"></i
               ></a>
             </li>
@@ -190,8 +190,9 @@
             </li> -->
             <li>
               <a (click)="logout()"
-                ><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a
-              >
+                ><i class="fa-solid fa-arrow-right-from-bracket"></i>
+                {{ 'dashboard.logout' | translation : selectedLanguage }}
+              </a>
             </li>
 
             <!-- <li>

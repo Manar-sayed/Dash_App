@@ -13,7 +13,9 @@ export class ProductService {
 
   private apiUrlImage = `${this.mainApi}/ECommerce/Photos`;
   private categoryApi = `${this.mainApi}/Admin/ECommerce/Category`;
-  token = environment.token;
+  // token = environment.token;
+  token = localStorage.getItem('authToken');
+
   constructor(public http: HttpClient) {}
   // token
   private getHeaders(): HttpHeaders {
@@ -39,10 +41,7 @@ export class ProductService {
     return this.http.get(url, { headers: this.getHeaders() });
   }
 
-  getAllCategory(
-    index?: number,
-    size?: number
-  ): Observable<any> {
+  getAllCategory(index?: number, size?: number): Observable<any> {
     // const url = `${this.mainApi}/${language}/ECommerce/Category/GetAll?index=${index}&size=${size}&message=${this.token}`;
     const url = `${this.categoryApi}/GetAll?index=${index}&size=${size}&message=${this.token}`;
     return this.http.get(url, { headers: this.getHeaders() });
@@ -52,13 +51,15 @@ export class ProductService {
   getById(id: any, language: string) {
     return this.http.get<Product>(
       // `${this.mainApi}/${language}/ECommerce/Product/Get?ProductID=${id}`
-      `${this.apiUrl}/Get?ProductID=${id}`
+      `${this.apiUrl}/Get?ProductID=${id}`,
+      { headers: this.getHeaders() }
     );
   }
   getByCategoryId(categoryId: any, language: string) {
     return this.http.get<Product>(
       // `${this.mainApi}/${language}/ECommerce/Product/${categoryId}`
-      `${this.apiUrl}/${categoryId}`
+      `${this.apiUrl}/${categoryId}`,
+      { headers: this.getHeaders() }
     );
   }
 

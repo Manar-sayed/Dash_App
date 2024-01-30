@@ -12,8 +12,9 @@ export class CategoryService {
   mainApi = environment.apiUrl;
   private apiUrl = `${this.mainApi}/Admin/ECommerce/Category`;
   private categoryApi = `${this.mainApi}/Admin/ECommerce/Category`;
+  token = localStorage.getItem('authToken');
 
-  token = environment.token;
+  //token = environment.token;
 
   private getHeaders(): HttpHeaders {
     return new HttpHeaders({
@@ -22,15 +23,20 @@ export class CategoryService {
   }
 
   getAllCategory(index?: number, size?: number): Observable<any> {
-    // const url = `${this.mainApi}/${language}/ECommerce/Category/GetAll?index=${index}&size=${size}&message=${this.token}`;
+    console.log(this.token);
     const url = `${this.categoryApi}/GetAll?index=${index}&size=${size}&message=${this.token}`;
-    return this.http.get(url, { headers: this.getHeaders() });
+    return this.http.get(url, {
+      headers: this.getHeaders(),
+    });
   }
 
   getById(id: any, language: string) {
     return this.http.get<Category>(
       // `${this.mainApi}/${language}/ECommerce/Category/Get?Id=${id}`
-      `${this.apiUrl}/Get?ID=${id}`
+      `${this.apiUrl}/Get?ID=${id}`,
+      {
+        headers: this.getHeaders(),
+      }
     );
   }
 

@@ -8,13 +8,9 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class SettingService {
-  // baseUrl = environment.apiUrl;
   mainApi = environment.apiUrl;
   private apiUrl = `${this.mainApi}/ECommerce/Setting`;
-
-  token = environment.token;
-
-  // private apiUrl = 'http://companymoasassah.somee.com/ECommerce/Setting';
+  token = localStorage.getItem('authToken');
   constructor(public http: HttpClient) {}
   // token
   private getHeaders(): HttpHeaders {
@@ -23,7 +19,7 @@ export class SettingService {
     });
   }
 
-  // get all product
+  // get all
   getAllSetting(): Observable<any> {
     const url = `${this.apiUrl}/get`;
 
@@ -32,11 +28,10 @@ export class SettingService {
       `Bearer ${this.token}`
     );
 
-    return this.http.get(url);
+    return this.http.get(url, { headers: this.getHeaders() });
   }
 
   // update
-  // http://companymoasassah.somee.com/ECommerce/Setting/update/1
   updateSetting(setting: Setting): Observable<any> {
     const url = `${this.apiUrl}/update/1`;
     const headers = new HttpHeaders().set(
@@ -44,6 +39,6 @@ export class SettingService {
       `Bearer ${this.token}`
     );
 
-    return this.http.put(url, setting);
+    return this.http.put(url, setting, { headers: this.getHeaders() });
   }
 }

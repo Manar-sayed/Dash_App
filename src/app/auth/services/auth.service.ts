@@ -45,7 +45,11 @@ export class AuthService {
             this.setAuthentication(true);
             this.setUser(response.user);
             this.setTokenExpiration();
-            this.saveAuthenticationData(response.token, this.tokenExpiration!);
+            // this.saveAuthenticationData(response.token, this.tokenExpiration!);
+            this.saveAuthenticationData(
+              response.message,
+              this.tokenExpiration!
+            );
           }
         },
         (error) => {
