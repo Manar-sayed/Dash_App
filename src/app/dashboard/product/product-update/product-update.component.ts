@@ -163,7 +163,6 @@ export class ProductUpdateComponent implements OnInit {
     this.errortrue = false;
   }
 
-
   showSuccessAlert(title: any): void {
     Swal.fire({
       icon: 'success',

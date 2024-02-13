@@ -3,12 +3,15 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable, tap } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://companymoasassah.somee.com/ECommerce/Auth/Login';
+  // private apiUrl = 'http://companymoasassah.somee.com/ECommerce/Auth/Login';
+  mainApi = environment.apiUrl;
+
   private isAuthenticated: boolean = false;
   private user: any;
   private tokenExpiration: Date | null = null;
@@ -38,7 +41,7 @@ export class AuthService {
   }
 
   login(credentials: { email: string; password: string }): Observable<any> {
-    return this.http.post(`${this.apiUrl}`, credentials).pipe(
+    return this.http.post(`${this.mainApi}/ECommerce/Auth/Login`, credentials).pipe(
       tap(
         (response: any) => {
           if (response && response.message && response.isSuccess) {

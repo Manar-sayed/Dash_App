@@ -54,7 +54,7 @@ export class ProductListComponent implements OnInit {
   products: Product[] = [];
 
   ngOnInit() {
-    console.log(this.textDir);
+    // console.log(this.textDir);
     this.isLoading = true;
 
 
@@ -62,10 +62,10 @@ export class ProductListComponent implements OnInit {
       this.language = language;
       if (this.language === 'en') {
         this.textDir = 'ltr';
-        console.log(this.textDir);
+        // console.log(this.textDir);
       } else {
         this.textDir = 'rtl';
-        console.log(this.textDir);
+        // console.log(this.textDir);
       }
       this.loadProducts(); // You can call your loadProducts function here
     });
