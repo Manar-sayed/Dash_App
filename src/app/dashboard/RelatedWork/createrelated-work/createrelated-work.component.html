@@ -4,16 +4,16 @@
     <mat-card-content>
       <section>
         <div class="title">
-          {{ "productRelatedcreate.maintitle" | translation : language }}
+          {{ 'productRelatedcreate.maintitle' | translation : language }}
         </div>
         <div>
           <form (ngSubmit)="addRelatedWork()" [formGroup]="newRelatedWorkForm">
             <div class="form-row">
               <div class="form-group col-6">
                 <label for="name">
-                  <span class='text-danger'>*</span>
+                  <span class="text-danger">*</span>
 
-                  {{ "productRelatedcreate.name" | translation : language }}
+                  {{ 'productRelatedcreate.name' | translation : language }}
                 </label>
                 <input
                   (input)="onInput()"
@@ -33,7 +33,7 @@
                     errortrue
                   "
                 >
-                  {{ "create.required" | translation : language }}
+                  {{ 'create.required' | translation : language }}
                 </div>
                 <div
                   class="text-danger mt-3"
@@ -44,16 +44,16 @@
                     errortrue
                   "
                 >
-                  {{ "create.length" | translation : language }}
+                  {{ 'create.length' | translation : language }}
                 </div>
               </div>
 
               <div class="form-group col-6">
                 <label for="arabicName">
-                  <span class='text-danger'>*</span>
+                  <span class="text-danger">*</span>
 
                   {{
-                    "productRelatedcreate.arabicname" | translation : language
+                    'productRelatedcreate.arabicname' | translation : language
                   }}
                 </label>
                 <input
@@ -76,7 +76,7 @@
                     errortrue
                   "
                 >
-                  {{ "create.required" | translation : language }}
+                  {{ 'create.required' | translation : language }}
                 </div>
                 <div
                   class="text-danger mt-3"
@@ -89,16 +89,16 @@
                     errortrue
                   "
                 >
-                  {{ "create.length" | translation : language }}
+                  {{ 'create.length' | translation : language }}
                 </div>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-6">
                 <label for="describtion">
-                  <span class='text-danger'>*</span>
+                  <span class="text-danger">*</span>
 
-                  {{ "productRelatedcreate.desc" | translation : language }}
+                  {{ 'productRelatedcreate.desc' | translation : language }}
                 </label>
                 <input
                   (input)="onInput()"
@@ -120,7 +120,7 @@
                     errortrue
                   "
                 >
-                  {{ "create.required" | translation : language }}
+                  {{ 'create.required' | translation : language }}
                 </div>
                 <div
                   class="text-danger mt-3"
@@ -133,16 +133,16 @@
                     errortrue
                   "
                 >
-                  {{ "create.length" | translation : language }}
+                  {{ 'create.length' | translation : language }}
                 </div>
               </div>
 
               <div class="form-group col-6">
                 <label for="arabicDescription">
-                  <span class='text-danger'>*</span>
+                  <span class="text-danger">*</span>
 
                   {{
-                    "productRelatedcreate.arabicdesc" | translation : language
+                    'productRelatedcreate.arabicdesc' | translation : language
                   }}
                 </label>
                 <input
@@ -166,7 +166,7 @@
                     errortrue
                   "
                 >
-                  {{ "create.required" | translation : language }}
+                  {{ 'create.required' | translation : language }}
                 </div>
                 <div
                   class="text-danger mt-3"
@@ -180,7 +180,7 @@
                     errortrue
                   "
                 >
-                  {{ "create.length" | translation : language }}
+                  {{ 'create.length' | translation : language }}
                 </div>
                 <!-- <input
                    (input)="onInput()"
@@ -197,7 +197,7 @@
             <div class="form-row">
               <div class="form-group col-6">
                 <label for="imageOrFile">
-                  {{ "productRelatedcreate.image" | translation : language }}
+                  {{ 'productRelatedcreate.image' | translation : language }}
                 </label>
                 <input
                   (input)="onInput()"
@@ -209,9 +209,9 @@
               </div>
               <div class="form-group col-6">
                 <label for="productId" class="pb-2">
-                  <span class='text-danger'>*</span>
+                  <span class="text-danger">*</span>
 
-                  {{ "productRelatedcreate.category" | translation : language }}
+                  {{ 'productRelatedcreate.category' | translation : language }}
                 </label>
 
                 <select
@@ -221,7 +221,7 @@
                   formControlName="productId"
                   required
                 >
-                  <option selected>Choose...</option>
+                  <option selected disabled>Choose...</option>
                   <option *ngFor="let r of allProduct" [value]="r.id">
                     {{ r.name }}
                   </option>
@@ -237,7 +237,7 @@
                     errortrue
                   "
                 >
-                  {{ "create.required" | translation : language }}
+                  {{ 'create.required' | translation : language }}
                 </div>
               </div>
             </div>
@@ -247,7 +247,7 @@
               class="btn createBtn"
               [disabled]="!newRelatedWorkForm.valid"
             >
-              {{ "product.savebtn" | translation : language }}
+              {{ 'product.savebtn' | translation : language }}
             </button>
           </form>
         </div>

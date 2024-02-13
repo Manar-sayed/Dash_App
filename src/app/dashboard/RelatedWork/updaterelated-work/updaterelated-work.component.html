@@ -1,7 +1,7 @@
 <section class="dialog p-4 pt-3" dir="rtl">
   <div class="container">
     <h2 class="title mt-3">
-      {{ "productRelatededit.maintitle" | translation : language }}
+      {{ 'productRelatededit.maintitle' | translation : language }}
     </h2>
     <form (ngSubmit)="updateRelatedWork()" [formGroup]="newCategoryForm">
       <!-- <div class="row justify-content-between">
@@ -22,7 +22,7 @@
           <label for="name">
             <span class="text-danger">*</span>
 
-            {{ "productRelatedcreate.name" | translation : language }}
+            {{ 'productRelatedcreate.name' | translation : language }}
           </label>
           <input
             type="text"
@@ -38,7 +38,7 @@
                 newCategoryForm.get('name')?.touched)
             "
           >
-            {{ "create.required" | translation : language }}
+            {{ 'create.required' | translation : language }}
           </div>
           <div
             class="text-danger mt-3"
@@ -48,7 +48,7 @@
                 newCategoryForm.get('name')?.touched)
             "
           >
-            {{ "create.length" | translation : language }}
+            {{ 'create.length' | translation : language }}
           </div>
         </div>
 
@@ -56,7 +56,7 @@
           <label for="arabicName">
             <span class="text-danger">*</span>
 
-            {{ "productRelatedcreate.arabicname" | translation : language }}
+            {{ 'productRelatedcreate.arabicname' | translation : language }}
           </label>
           <input
             type="text"
@@ -72,7 +72,7 @@
                 newCategoryForm.get('arabicName')?.touched)
             "
           >
-            {{ "create.required" | translation : language }}
+            {{ 'create.required' | translation : language }}
           </div>
           <div
             class="text-danger mt-3"
@@ -82,7 +82,7 @@
                 newCategoryForm.get('arabicName')?.touched)
             "
           >
-            {{ "create.length" | translation : language }}
+            {{ 'create.length' | translation : language }}
           </div>
         </div>
       </div>
@@ -92,7 +92,7 @@
           <label for="description">
             <span class="text-danger">*</span>
 
-            {{ "productRelatedcreate.desc" | translation : language }}
+            {{ 'productRelatedcreate.desc' | translation : language }}
           </label>
           <textarea
             id="description"
@@ -107,7 +107,7 @@
                 newCategoryForm.get('describtion')?.touched)
             "
           >
-            {{ "create.required" | translation : language }}
+            {{ 'create.required' | translation : language }}
           </div>
           <div
             class="text-danger mt-3"
@@ -117,7 +117,7 @@
                 newCategoryForm.get('describtion')?.touched)
             "
           >
-            {{ "create.length" | translation : language }}
+            {{ 'create.length' | translation : language }}
           </div>
         </div>
 
@@ -125,7 +125,7 @@
           <label for="arabicDescription">
             <span class="text-danger">*</span>
 
-            {{ "productRelatedcreate.arabicdesc" | translation : language }}
+            {{ 'productRelatedcreate.arabicdesc' | translation : language }}
           </label>
           <textarea
             id="arabicDescription"
@@ -140,7 +140,7 @@
                 newCategoryForm.get('arabicDescribtion')?.touched)
             "
           >
-            {{ "create.required" | translation : language }}
+            {{ 'create.required' | translation : language }}
           </div>
           <div
             class="text-danger mt-3"
@@ -150,14 +150,14 @@
                 newCategoryForm.get('arabicDescribtion')?.touched)
             "
           >
-            {{ "create.length" | translation : language }}
+            {{ 'create.length' | translation : language }}
           </div>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-6">
           <label for="imageOrFile">
-            {{ "productRelatedcreate.image" | translation : language }}
+            {{ 'productRelatedcreate.image' | translation : language }}
           </label>
           <input
             type="file"
@@ -170,7 +170,7 @@
           <label for="productId">
             <span class="text-danger">*</span>
 
-            {{ "productRelatedcreate.category" | translation : language }}
+            {{ 'productRelatedcreate.category' | translation : language }}
           </label>
 
           <select
@@ -178,7 +178,7 @@
             id="productId"
             formControlName="productId"
           >
-            <option selected>Choose...</option>
+            <option selected disabled>Choose...</option>
             <option *ngFor="let product of products" [value]="product.id">
               {{ product.name }}
             </option>
@@ -192,7 +192,7 @@
                 newCategoryForm.get('productId')?.touched)
             "
           >
-            {{ "create.required" | translation : language }}
+            {{ 'create.required' | translation : language }}
           </div>
         </div>
       </div>
@@ -208,7 +208,7 @@
           cdkFocusInitial
           (click)="onNoClick()"
         >
-          {{ "product.closebtn" | translation : language }}
+          {{ 'product.closebtn' | translation : language }}
         </button>
         <button
           type="submit"
@@ -216,7 +216,7 @@
           cdkFocusInitial
           mat-dialog-close
         >
-          {{ "product.savebtn" | translation : language }}
+          {{ 'product.savebtn' | translation : language }}
         </button>
       </div>
     </form>

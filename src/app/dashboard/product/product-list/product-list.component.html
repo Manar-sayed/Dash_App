@@ -7,7 +7,7 @@
       <section>
         <div class="d-sm-flex justify-content-between align-items-center m-5">
           <div>
-            <h1>{{ "product.maintitle" | translation : language }}</h1>
+            <h1>{{ 'product.maintitle' | translation : language }}</h1>
           </div>
           <div>
             <button
@@ -16,7 +16,7 @@
               class="createBtn btn"
             >
               <h2 class="">
-                {{ "product.createbtn" | translation : language }}
+                {{ 'product.createbtn' | translation : language }}
               </h2>
             </button>
           </div>
@@ -28,10 +28,25 @@
               <tr>
                 <th scope="col" class="th1">#</th>
                 <th scope="col" class="th1">
-                  <h2>{{ "product.name" | translation : language }}</h2>
+                  <h2>{{ 'producttable.name' | translation : language }}</h2>
+                </th>
+
+                <th scope="col" class="th1">
+                  <h2>
+                    {{ 'producttable.arabicname' | translation : language }}
+                  </h2>
+                </th>
+                <!-- <th scope="col" class="th1">
+                  <h2>{{ 'producttable.desc' | translation : language }}</h2>
                 </th>
                 <th scope="col" class="th1">
-                  <h2>{{ "product.actions" | translation : language }}</h2>
+                  <h2>
+                    {{ 'producttable.arabicdesc' | translation : language }}
+                  </h2>
+                </th> -->
+
+                <th scope="col" class="th1">
+                  <h2>{{ 'product.actions' | translation : language }}</h2>
                 </th>
               </tr>
             </thead>
@@ -40,6 +55,9 @@
               <tr *ngFor="let product of products; let i = index">
                 <td scope="row">{{ i }}</td>
                 <td>{{ product.name }}</td>
+                <td>{{ product.arabicName }}</td>
+                <!-- <td>{{ product.describtion }}</td>
+                <td>{{ product.arabicDescribtion }}</td> -->
                 <td>
                   <div>
                     <!-- <a

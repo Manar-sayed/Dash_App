@@ -5,7 +5,7 @@
         <div class="d-sm-flex justify-content-between align-items-center m-5">
           <div>
             <h1 class="">
-              {{ "productRelated.maintitle" | translation : language }}
+              {{ 'productRelated.maintitle' | translation : language }}
             </h1>
           </div>
           <div>
@@ -15,7 +15,7 @@
               class="createBtn btn"
             >
               <h2 class="">
-                {{ "productRelatedcreate.maintitle" | translation : language }}
+                {{ 'productRelatedcreate.maintitle' | translation : language }}
               </h2>
             </button>
           </div>
@@ -29,11 +29,26 @@
                   <h2>{{ "productRelated.id" | translation : language }}</h2>
                 </th> -->
                 <th scope="col" class="th1">
-                  <h2>{{ "productRelated.name" | translation : language }}</h2>
+                  <h2>{{ 'Relatedtable.name' | translation : language }}</h2>
+                </th>
+
+                <th scope="col" class="th1">
+                  <h2>
+                    {{ 'Relatedtable.arabicname' | translation : language }}
+                  </h2>
+                </th>
+                <!-- <th scope="col" class="th1">
+                  <h2>{{ 'Relatedtable.desc' | translation : language }}</h2>
                 </th>
                 <th scope="col" class="th1">
                   <h2>
-                    {{ "productRelated.actions" | translation : language }}
+                    {{ 'Relatedtable.arabicdesc' | translation : language }}
+                  </h2>
+                </th> -->
+
+                <th scope="col" class="th1">
+                  <h2>
+                    {{ 'productRelated.actions' | translation : language }}
                   </h2>
                 </th>
               </tr>
@@ -43,6 +58,9 @@
                 <td scope="row">{{ i }}</td>
                 <!-- <td>{{ relatedWork.id }}</td> -->
                 <td>{{ relatedWork.name }}</td>
+                <td>{{ relatedWork.arabicName }}</td>
+                <!-- <td>{{ relatedWork.describtion }}</td>
+                <td>{{ relatedWork.arabicDescribtion }}</td> -->
                 <td>
                   <div>
                     <a

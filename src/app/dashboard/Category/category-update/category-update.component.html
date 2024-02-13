@@ -1,7 +1,7 @@
 <section class="dialog p-4 pt-3" dir="rtl">
   <div class="container">
     <h2 class="title">
-      {{ "Categoryedit.maintitle" | translation : language }}
+      {{ 'Categoryedit.maintitle' | translation : language }}
     </h2>
 
     <form (ngSubmit)="updatecategory()" [formGroup]="newCategoryForm">
@@ -22,7 +22,7 @@
           <label for="name">
             <span class="text-danger">*</span>
 
-            {{ "Category.name" | translation : language }}
+            {{ 'Category.name' | translation : language }}
           </label>
           <input
             type="text"
@@ -38,7 +38,7 @@
                 newCategoryForm.get('name')?.touched)
             "
           >
-            {{ "create.required" | translation : language }}
+            {{ 'create.required' | translation : language }}
           </div>
           <div
             class="text-danger mt-3"
@@ -48,7 +48,7 @@
                 newCategoryForm.get('name')?.touched)
             "
           >
-            {{ "create.length" | translation : language }}
+            {{ 'create.length' | translation : language }}
           </div>
         </div>
 
@@ -56,7 +56,7 @@
           <label for="arabicName">
             <span class="text-danger">*</span>
 
-            {{ "Category.arabicname" | translation : language }}
+            {{ 'Category.arabicname' | translation : language }}
           </label>
           <input
             type="text"
@@ -72,7 +72,7 @@
                 newCategoryForm.get('arabicName')?.touched)
             "
           >
-            {{ "create.required" | translation : language }}
+            {{ 'create.required' | translation : language }}
           </div>
           <div
             class="text-danger mt-3"
@@ -82,7 +82,7 @@
                 newCategoryForm.get('arabicName')?.touched)
             "
           >
-            {{ "create.length" | translation : language }}
+            {{ 'create.length' | translation : language }}
           </div>
         </div>
       </div>
@@ -92,7 +92,7 @@
           <label for="description">
             <span class="text-danger">*</span>
 
-            {{ "productedit.desc" | translation : language }}
+            {{ 'productedit.desc' | translation : language }}
           </label>
           <textarea
             id="description"
@@ -107,7 +107,7 @@
                 newCategoryForm.get('describtion')?.touched)
             "
           >
-            {{ "create.required" | translation : language }}
+            {{ 'create.required' | translation : language }}
           </div>
           <div
             class="text-danger mt-3"
@@ -117,7 +117,7 @@
                 newCategoryForm.get('describtion')?.touched)
             "
           >
-            {{ "create.length" | translation : language }}
+            {{ 'create.length' | translation : language }}
           </div>
         </div>
 
@@ -125,7 +125,7 @@
           <label for="arabicDescription">
             <span class="text-danger">*</span>
 
-            {{ "productedit.arabicdesc" | translation : language }}
+            {{ 'productedit.arabicdesc' | translation : language }}
           </label>
           <textarea
             id="arabicDescribtion"
@@ -140,7 +140,7 @@
                 newCategoryForm.get('arabicDescribtion')?.touched)
             "
           >
-            {{ "create.required" | translation : language }}
+            {{ 'create.required' | translation : language }}
           </div>
           <div
             class="text-danger mt-3"
@@ -150,14 +150,14 @@
                 newCategoryForm.get('arabicDescribtion')?.touched)
             "
           >
-            {{ "create.length" | translation : language }}
+            {{ 'create.length' | translation : language }}
           </div>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-6">
           <label for="imageOrFile">
-            {{ "productedit.image" | translation : language }}
+            {{ 'productedit.image' | translation : language }}
           </label>
           <input
             type="file"
@@ -179,10 +179,10 @@
           mat-dialog-close
           (click)="onNoClick()"
         >
-          {{ "product.backbtn" | translation : language }}
+          {{ 'product.backbtn' | translation : language }}
         </button>
         <button type="submit" class="btn btn-danger btn-lg">
-          {{ "product.savebtn" | translation : language }}
+          {{ 'product.savebtn' | translation : language }}
         </button>
       </div>
     </form>

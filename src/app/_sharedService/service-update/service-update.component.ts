@@ -30,7 +30,7 @@ export class ServiceUpdateComponent {
   textDir: any;
   id: number = 0;
   errortrue: any = false;
-
+  errors: any;
   ngOnInit(): void {
     this.translatedashService.getLanguage().subscribe((language) => {
       this.currentLanguage = language;
@@ -91,8 +91,10 @@ export class ServiceUpdateComponent {
     if (this.newCategoryForm.valid) {
       const formData = this.newCategoryForm.value;
 
-      this.activatedRoute.params.subscribe((p) => {
-        this.settingService.updateSetting(formData).subscribe(() => {
+      // this.activatedRoute.params.subscribe(
+      //   (p) => {
+      this.settingService.updateSetting(formData).subscribe(
+        () => {
           // Show SweetAlert on success
           this.showSuccessAlert('App Setting uploaded successfully!');
 
@@ -102,9 +104,16 @@ export class ServiceUpdateComponent {
             //   this.showSuccessAlert('App Setting uploaded successfully!')
             // );
             .then((page) => window.location.reload());
-        });
-      });
-      console.log('done');
+        },
+        (error) => {
+          console.error('Error updating dddddddddddd:', error.error?.errors);
+          this.errors = error.error?.errors;
+          console.log('errors', this.errors);
+        }
+        // }
+      );
+
+      // );
 
       // this.dialogRef.close();
     } else {

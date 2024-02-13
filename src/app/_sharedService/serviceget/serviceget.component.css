@@ -171,3 +171,9 @@ i:hover {
     font-size: 0.8em;
   }
 }
+
+
+.custom-size {
+  font-size: 1em; /* or any other size you prefer */
+  color: #44bd39;
+}
